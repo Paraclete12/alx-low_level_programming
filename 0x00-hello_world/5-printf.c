@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * main - Entry point
- * Retun: Always 0
+ * main - this programs use printf to display output
+ * Return: Always 0 (success)
  */
 
 int main(void)
