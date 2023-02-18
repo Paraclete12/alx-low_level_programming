@@ -1,5 +1,3 @@
-task 4
-
 #include <stdio.h>
 
 /**
