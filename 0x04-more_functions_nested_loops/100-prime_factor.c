@@ -1,27 +1,69 @@
-#include "main.h"
-#include <stdio.h>
+#include<stdio.h>
 
 /**
- * print_number - Prints an integer.
+ * _sqrt - finds the square root
  *
- * @n: The integer to be printed.
+ * @x: input number
+ *
+ * Return: square root of x
+ *
+ */
+
+double _sqrt(double x)
+{
+	float sqrt, tmp;
+
+	sqrt = x / 2;
+	tmp = 0;
+
+	while (sqrt != tmp)
+	{
+		tmp = sqrt;
+		sqrt = (x / tmp + tmp) / 2;
+	}
+	return (sqrt);
+}
+
+/**
+ * largest_prime_factor - finds and prints the largest
+ *			prime factor of number (num)
+ *
+ * @num: number to find
 */
 
-void print_number(int n)
+void largest_prime_factor(long int num)
 {
-	unsigned int num = n;
+	int prmNu, largest;
 
-	/*first check if its negative*/
-	if (n < 0)
+	/* first divide with the smallest prime number (two) */
+	while (num % 2 == 0)
+		num = num / 2;
+
+	/* num must be odd so we proceed to the next prime number (plus two) */
+	for (prmNu = 3; prmNu <= _sqrt(num); prmNu += 2)
 	{
-		_putchar('-');
-		num = -num;
+		while (num % prmNu == 0)
+		{
+			num = num / prmNu;
+			largest = prmNu;
+		}
 	}
 
-	/*print the first few digits*/
-	if ((num / 10) > 0)
-		print_number(num / 10);
 
-	/*print the last digit*/
-	_putchar((num % 10) + 48);
+	if (num > 2)
+		largest = num;
+	printf("%d\n", largest);
+}
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+*/
+int main(void)
+{
+
+	largest_prime_factor(612852475143);
+
+	return (0);
 }
