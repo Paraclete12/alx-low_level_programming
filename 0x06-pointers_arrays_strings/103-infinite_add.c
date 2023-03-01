@@ -14,7 +14,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r);
  *         If r cannot store the sum - 0.
  */
 
-char *add_strings(char *n1, char *n2, char *r, int r_index)
+char *add_string_:s(char *n1, char *n2, char *r, int r_index)
 {
 	int num, tens = 0;
 
@@ -45,7 +45,6 @@ char *add_strings(char *n1, char *n2, char *r, int r_index)
 		*(r + r_index) = (tens % 10) + '0';
 			return (r + r_index);
 	}
-
 	else if (tens && r_index < 0)
 		return (0);
 
