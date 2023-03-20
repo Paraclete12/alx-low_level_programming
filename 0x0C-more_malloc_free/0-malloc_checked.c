@@ -5,7 +5,7 @@
  * malloc_checked - This function allocates a memory
  * @b: size parameter.
  * Return: pointer to allocated memory
- * Date: 16-03-2023
+ * Date: 20-03-2023
  */
 
 void *malloc_checked(unsigned int b)
