@@ -5,21 +5,20 @@
 * @h: a pointer to a list_t list
 * Return: returns the number of nodes
 */
+
 size_t print_list(const list_t *h)
 {
-	size_t i = 0;
+	size_t element;
 
-	if (h == NULL)
-		return (0);
-
+	element = 0;
 	while (h != NULL)
 	{
-		if (h->str != NULL)
-			printf("[%u] %s\n", h->len, h->str);
+		if (h->str == NULL)
+			printf("[%d] %s\n", 0, "(nil)");
 		else
-			printf("[0] (nil)\n");
+			printf("[%d] %s\n", h->len, h->str);
 		h = h->next;
-		i++;
+		element++;
 	}
-	return (i);
+	return (element);
 }
